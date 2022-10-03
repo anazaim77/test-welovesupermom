@@ -1,4 +1,4 @@
-import { textFormat } from "@/utils";
+import { CSVUtils, textUtils } from "@/utils";
 import { FontAwesome } from "@expo/vector-icons";
 import {
   Box,
@@ -34,7 +34,7 @@ const Root = (props: RootProps) => {
             </Box>
             <Box px="4">
               <Text fontWeight={"bold"}>Alternate style</Text>
-              {textFormat.toAlternateUpperAndLower(query)}
+              {textUtils.toAlternateUpperAndLower(query)}
             </Box>
           </VStack>
         </Box>
@@ -52,6 +52,7 @@ const Root = (props: RootProps) => {
             mr={3}
             leftIcon={<Icon as={FontAwesome} name="print" />}
             colorScheme="coolGray"
+            onPress={() => CSVUtils.generateCSVFile(query)}
           >
             Generate CSV
           </Button>

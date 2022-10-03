@@ -1,3 +1,4 @@
-import * as textFormat from "./textFormat";
+import * as textUtils from "./textUtils";
+import * as CSVUtils from "./CSVUtils";
 
-export { textFormat };
+export { textUtils, CSVUtils };

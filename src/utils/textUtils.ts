@@ -8,3 +8,14 @@ export const toAlternateUpperAndLower = (text: string) => {
   }, "");
   return newString;
 };
+
+export const convertStringToCSVString = (text: string) => {
+  const characters = text.split("");
+  let newString = characters.reduce((accumulator, item, index) => {
+    if (index === 0) {
+      return accumulator + `${item}`;
+    }
+    return accumulator + `,${item}`;
+  }, "");
+  return newString;
+};
